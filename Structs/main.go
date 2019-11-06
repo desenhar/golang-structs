@@ -21,6 +21,15 @@ func main() {
 			postCode: "SW2 2JR",
 		},
 	}
+	jimPointer := &jim
+	jimPointer.updateName("jimmy")
+	jim.print()
+}
 
-	fmt.Printf("%+v", jim)
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
